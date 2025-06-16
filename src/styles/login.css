@@ -1,0 +1,161 @@
+/* Main wrapper layout */
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Left side with background and info */
+.login-left {
+  flex: 1;
+  background-image: url('https://images.unsplash.com/photo-1487700160041-babef9c3cb55?q=80&w=2052&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Use your own image if desired */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Overlay inside left side */
+.login-left .overlay {
+ background: rgb(236 222 222 / 50%);
+  padding: 40px;
+  text-align: left;
+  max-width: 80%;
+  border-radius: 8px;
+}
+
+/* Branding: logo, title, tagline */
+.branding {
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.headline {
+  font-size: 32px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 18px;
+  color: black;
+}
+
+/* Feature list */
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  color: black;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.features li::before {
+  content: "✔ ";
+  color: #4caf50;
+}
+
+/* Call to action text */
+.cta {
+  margin-top: 30px;
+  font-size: 14px;
+  color: blueviolet;
+  font-style: italic;
+}
+
+/* Right side login card */
+.login-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fc;
+  padding: 40px;
+}
+
+.login-card {
+  background-color: #ffffff;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Login form styles */
+.login-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+.login-form .form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.login-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.input-error {
+  border-color: #e74c3c;
+}
+
+.error-msg {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Login button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.register-link{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgb(153, 103, 199);
+  font-style: italic;
+}
