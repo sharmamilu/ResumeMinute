@@ -159,3 +159,89 @@
   color: rgb(153, 103, 199);
   font-style: italic;
 }
+
+@media (max-width: 991px) {
+  .login-wrapper {
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+
+  .login-left {
+    padding: 30px 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .login-left .overlay {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .login-card {
+    padding: 30px 20px;
+    margin-top: 20px;
+  }
+
+  .headline {
+    font-size: 26px;
+  }
+
+  .tagline,
+  .features,
+  .cta {
+    font-size: 16px;
+  }
+}
+
+/* For phones (width < 576px) */
+@media (max-width: 575px) {
+  .login-left {
+    background-position: top;
+    background-size: cover;
+  }
+
+  .login-left .overlay {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+  }
+
+  .headline {
+    font-size: 22px;
+  }
+
+  .tagline,
+  .features,
+  .cta {
+    font-size: 14px;
+  }
+
+  .features li::before {
+    content: "• ";
+    color: #333;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-form input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .login-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .register-link {
+    font-size: 13px;
+  }
+}

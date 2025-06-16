@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "../styles/login.css"; // Optional if you separate login-specific styles
-
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const navigate = useNavigate();
+  const { loginUser, isLoggedIn } = useAuth();
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Login data:", data);
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, [isLoggedIn, navigate]);
+
+  const onSubmit = async (data) => {
+    const res = await loginUser(data);
+    if (res) {
+      console.log("the isLoggedIn is", isLoggedIn);
+      navigate("/dashboard");
+    } else {
+      navigate("/");
+    }
   };
 
   return (
@@ -19,7 +34,11 @@ const Login = () => {
       <div className="login-left">
         <div className="overlay">
           <div className="branding">
-            <img src="../src/assets/images/logo.png" alt="Platform Logo" className="logo" />
+            <img
+              src="../src/assets/images/logo.png"
+              alt="Platform Logo"
+              className="logo"
+            />
             <h1 className="headline">Welcome Back!</h1>
             <p className="tagline">Login to continue your journey with us.</p>
           </div>
@@ -32,7 +51,9 @@ const Login = () => {
           </ul>
 
           <p className="cta">Don't have an account? Register to get started!</p>
-          <Link to="/register" className="register-link">Register Now</Link>
+          <Link to="/register" className="register-link">
+            Register Now
+          </Link>
         </div>
       </div>
 
@@ -59,10 +80,14 @@ const Login = () => {
                 className={errors.password ? "input-error" : ""}
                 placeholder="Enter your password"
               />
-              {errors.password && <p className="error-msg">Password is required</p>}
+              {errors.password && (
+                <p className="error-msg">Password is required</p>
+              )}
             </div>
 
-            <button type="submit" className="login-button">Login</button>
+            <button type="submit" className="login-button">
+              Login
+            </button>
           </form>
         </div>
       </div>

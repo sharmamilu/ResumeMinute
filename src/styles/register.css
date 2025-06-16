@@ -162,3 +162,89 @@
   color: rgb(153, 103, 199);
   font-style: italic;
 }
+
+@media (max-width: 991px) {
+  .register-wrapper {
+    flex-direction: column;
+  }
+
+  .register-left,
+  .register-right {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+  }
+
+  .register-left {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 30px 20px;
+  }
+
+  .register-left .overlay {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .register-card {
+    padding: 30px 20px;
+    margin-top: 20px;
+  }
+
+  .headline {
+    font-size: 26px;
+  }
+
+  .tagline,
+  .features,
+  .cta {
+    font-size: 16px;
+  }
+
+  .register-title {
+    font-size: 24px;
+  }
+}
+
+/* For phones (width < 576px) */
+@media (max-width: 575px) {
+  .register-left {
+    background-position: top;
+    background-size: cover;
+  }
+
+  .register-left .overlay {
+    background: rgba(255, 255, 255, 0.85);
+    color: #000;
+  }
+
+  .headline {
+    font-size: 22px;
+  }
+
+  .tagline,
+  .features,
+  .cta {
+    font-size: 14px;
+  }
+
+  .features li::before {
+    content: "• ";
+    color: #333;
+  }
+
+  .register-form input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .register-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .login-link {
+    font-size: 13px;
+  }
+}

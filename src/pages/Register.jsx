@@ -2,8 +2,9 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import "../styles/register.css";
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../context/AuthContext";
 const Register = () => {
+  const { registerUser } = useAuth();
   const {
     register,
     handleSubmit,
@@ -11,6 +12,7 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    registerUser(data);
     console.log(data);
   };
 
